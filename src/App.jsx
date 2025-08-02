@@ -1,5 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './page/Home';
+import ProfileLayout from './page/ProfileLayout';
+
 function App() {
-  return <>당신은 할 수 있습니다.</>;
+  return(
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<ProfileLayout />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App;
