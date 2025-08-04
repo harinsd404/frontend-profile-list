@@ -12,13 +12,14 @@
     justify-content: center;
     align-items: center;
     position: fixed;
+    top: 0;
 }
 .navBar {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    padding: 1rem 0;
     gap: 25px;
     position: fixed;
     top: 82px;
-}
+    box-shadow: 0 2px 1px #e4e4e4;}

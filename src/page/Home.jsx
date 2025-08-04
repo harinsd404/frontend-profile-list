@@ -1,4 +1,5 @@
 import Header from '../components/Header';
+import '../style/Home.css';
 
 export default function Home(){
     const textLine = [
@@ -6,12 +7,12 @@ export default function Home(){
         "CardList : 카드 리스트를 볼 수 있다.",
         "Make Card : 카드를 만들 수 있다."
     ]
-    const listItme = textLine.map(text=><li>{text}</li>);
+    const listItme = textLine.map((text, index)=><li key={index}>{text}</li>);
 
     return(
         <>
             <Header />
-            <div>
+            <div className='container'>
                 <ul>{listItme}</ul>
             </div>
         </>
