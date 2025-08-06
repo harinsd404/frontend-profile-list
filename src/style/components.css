@@ -22,4 +22,19 @@
     gap: 25px;
     position: fixed;
     top: 82px;
-    box-shadow: 0 2px 1px #e4e4e4;}
+    box-shadow: 0 2px 1px #e4e4e4;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.inputArea {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.inputArea label {
+    gap: auto;
+}

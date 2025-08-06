@@ -1,5 +1,4 @@
-#continer {
-    width: 100vw;
+#container {
     display: flex;
     flex-direction: column;
     justify-content: center;
