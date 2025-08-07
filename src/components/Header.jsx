@@ -10,8 +10,8 @@ export default function Header(){
             </header>
             <nav className='navBar'>
                 <Link to="/">Home</Link>
-                <Link to="/profile/profileForm">Card List</Link>
-                <Link to="">Make Card</Link>
+                <Link to="">Card List</Link>
+                <Link to="/profile/profileForm">Make Card</Link>
             </nav>
         </>
     );
