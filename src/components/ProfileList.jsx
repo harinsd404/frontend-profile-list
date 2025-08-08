@@ -1,4 +1,5 @@
 import ProfileCard from './ProfileCard';
+import '../style/components.css';
 
 export default function ProfileList({ profiles, setProfiles }){
     const Delete = (id)=>{
