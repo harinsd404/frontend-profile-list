@@ -28,8 +28,8 @@ export default function ProfileForm({ profiles, setProfiles }){
                     name : inputRef.current[0].value.trim(),
                     team : inputRef.current[1].value.trim(),
                     job : inputRef.current[2].value.trim(),
-                    phone : inputRef.current[3].value.trim(),
-                    imail : inputRef.current[4].value.trim(),
+                    tel : inputRef.current[3].value.trim(),
+                    email : inputRef.current[4].value.trim(),
                     imgUrl : radioRef.current[i].value
                 } 
                 break;
