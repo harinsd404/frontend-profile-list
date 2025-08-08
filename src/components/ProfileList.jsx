@@ -1,6 +1,6 @@
 import ProfileCard from './ProfileCard';
 
-export default function ProfileList({ profiles }){
+export default function ProfileList({ profiles, setProfiles }){
     return (
         <>
             <h1>프로필 카드 목록</h1>

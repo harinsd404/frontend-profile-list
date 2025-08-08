@@ -1,7 +1,9 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../style/components.css';
 
-export default function ProfileForm({ profiles, setProfies }){
+export default function ProfileForm({ profiles, setProfiles }){
+    const navigate = useNavigate();
     const inputRef = useRef([]);
     const radioRef = useRef([]);
 
@@ -35,8 +37,8 @@ export default function ProfileForm({ profiles, setProfies }){
             }
         }
 
-        setProfies([...profiles, profile]);
-
+        setProfiles([...profiles, profile]);
+        navigate('/profile/profileList');
     }
 
     return (

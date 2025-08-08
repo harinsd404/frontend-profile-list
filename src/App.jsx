@@ -5,13 +5,13 @@ import ProfileLayout from './page/ProfileLayout';
 import cardData from './data/cardData';
 
 function App() {
-  const [profiles, setProfies] = useState(cardData);
+  const [profiles, setProfiles] = useState(cardData);
   return(
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Profile/*" element={<ProfileLayout profiles={profiles} setProfies={setProfies} />} />
+          <Route path="/Profile/*" element={<ProfileLayout profiles={profiles} setProfiles={setProfiles} />} />
         </Routes>
       </BrowserRouter>
     </>

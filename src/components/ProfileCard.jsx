@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
 export default function ProfileCard({ data }) {
+    const navigate = useNavigate();
+
     return (
         <>
             <div className="card">
@@ -14,7 +17,7 @@ export default function ProfileCard({ data }) {
                         <p>email. {data.email}</p>
                     </div>
                     <div className="btnArea">
-                        <button>수정</button>
+                        <button onClick={()=>navigate('/profile/modify/'+data.id)}>수정</button>
                         <button>삭제</button>
                     </div>
                 </div>
