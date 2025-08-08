@@ -7,6 +7,7 @@ export default function ProfileModify({ profiles, setProfiles }){
     const inputRef = useRef([]);
     const radioRef = useRef([]);
     const { id } = useParams();
+        
 
     const addProfile = () => {
         let profile;
@@ -19,12 +20,13 @@ export default function ProfileModify({ profiles, setProfiles }){
         for(let i=0;i<radioRef.current.length;i++){
             if(radioRef.current[i].checked) {
                 profile = {
-                    'id' : id,
-                    'name' : inputRef.current[0].value.trim(),
-                    'team' : inputRef.current[1].value.trim(),
-                    'job' : inputRef.current[2].value.trim(),
-                    'phone' : inputRef.current[3].value.trim(),
-                    'imgUrl' : radioRef.current[i].value
+                    id : id,
+                    name : inputRef.current[0].value.trim(),
+                    team : inputRef.current[1].value.trim(),
+                    job : inputRef.current[2].value.trim(),
+                    tel : inputRef.current[3].value.trim(),
+                    email : inputRef.current[4].value.trim(),
+                    imgUrl : radioRef.current[i].value
                 } 
                 break;
             } else if(!(radioRef.current[1].checked)){
@@ -32,7 +34,7 @@ export default function ProfileModify({ profiles, setProfiles }){
             }
         }
 
-        setProfiles((p)=> p.id === id ? profile:p);
+        setProfiles(profiles.map((p)=> p.id === id ? profile:p));
         navigate('/profile/profileList');
     }
 
@@ -49,8 +51,11 @@ export default function ProfileModify({ profiles, setProfiles }){
                     <label>Email <input type="text" placeholder='ex) paradox@gmail.com' defaultValue={profiles[id-1].email} ref={el => inputRef.current[4]=el} /></label>
                     <div>
                         Image
-                        <label><input type="radio" name='img' value='default' ref={el => radioRef.current[0] = el} />Default</label>
-                        <label><input type="radio" name='img' value='reverse' ref={el => radioRef.current[1] = el} />reverse</label>
+                        <label><input type="radio" name='img' value='src/assets/PARADOX_default.png' 
+                        ref={el => radioRef.current[0] = el }
+                        defaultChecked={profiles[id-1].imgUrl=="src/assets/PARADOX_default.png"} /> Default</label>
+                        <label><input type="radio" name='img' value='src/assets/PARADOX_reverse.png' ref={el => radioRef.current[1] = el}
+                        defaultChecked={profiles[id-1].imgUrl=="src/assets/PARADOX_reverse.png"} />reverse</label>
                     </div>
                 </div>
                

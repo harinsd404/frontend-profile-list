@@ -24,12 +24,13 @@ export default function ProfileForm({ profiles, setProfiles }){
         for(let i=0;i<radioRef.current.length;i++){
             if(radioRef.current[i].checked) {
                 profile = {
-                    'id' : num,
-                    'name' : inputRef.current[0].value.trim(),
-                    'team' : inputRef.current[1].value.trim(),
-                    'job' : inputRef.current[2].value.trim(),
-                    'phone' : inputRef.current[3].value.trim(),
-                    'imgUrl' : radioRef.current[i].value
+                    id : num,
+                    name : inputRef.current[0].value.trim(),
+                    team : inputRef.current[1].value.trim(),
+                    job : inputRef.current[2].value.trim(),
+                    phone : inputRef.current[3].value.trim(),
+                    imail : inputRef.current[4].value.trim(),
+                    imgUrl : radioRef.current[i].value
                 } 
                 break;
             } else if(!(radioRef.current[1].checked)){
@@ -54,8 +55,8 @@ export default function ProfileForm({ profiles, setProfiles }){
                     <label>Email <input type="text" placeholder='ex) paradox@gmail.com' ref={el => inputRef.current[4]=el} /></label>
                     <div>
                         Image
-                        <label><input type="radio" name='img' value='default' ref={el => radioRef.current[0] = el} />Default</label>
-                        <label><input type="radio" name='img' value='reverse' ref={el => radioRef.current[1] = el} />reverse</label>
+                        <label><input type="radio" name='img' value='src/assets/PARADOX_default.png' ref={el => radioRef.current[0] = el} />Default</label>
+                        <label><input type="radio" name='img' value='src/assets/PARADOX_reverse.png' ref={el => radioRef.current[1] = el} />reverse</label>
                     </div>
                 </div>
                
