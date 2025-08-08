@@ -4,14 +4,14 @@ import ProfileForm from '../components/ProfileForm';
 import ProfileList from '../components/ProfileList';
 import '../style/ProfileLayout.css';
 
-export default function ProfileLayout(){
+export default function ProfileLayout({profiles, setProfiles}){
     return (
         <>
             <Header />
             <div id="container">
                 <Routes>
-                    <Route path="/profileForm" element={<ProfileForm />}/>
-                    <Route path="/profileList" element={<ProfileList />}/>
+                    <Route path="/profileForm" element={<ProfileForm profiles={profiles} setProfiles={setProfiles} />}/>
+                    <Route path="/profileList" element={<ProfileList profiles={profiles} />}/>
                 </Routes>
             </div>
             

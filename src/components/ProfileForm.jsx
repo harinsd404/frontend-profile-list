@@ -1,12 +1,18 @@
 import { useRef } from 'react';
 import '../style/components.css';
 
-export default function ProfileForm(){
+export default function ProfileForm({ profiles, setProfies }){
     const inputRef = useRef([]);
     const radioRef = useRef([]);
 
     let profile = {};
     const addProfile = () => {
+        let num;
+        if(profiles)
+            num = profiles[profiles.length-1].id + 1;
+        else
+            num=1;
+
         for (let i=0;i<inputRef.current.length;i++){
             if (inputRef.current[i].value.trim() === "") {
                 alert('입력되지 않은 값이 있습니다.');
@@ -16,20 +22,20 @@ export default function ProfileForm(){
         for(let i=0;i<radioRef.current.length;i++){
             if(radioRef.current[i].checked) {
                 profile = {
-                    'Name' : inputRef.current[0].value.trim(),
-                    'Team' : inputRef.current[1].value.trim(),
-                    'Job' : inputRef.current[2].value.trim(),
-                    'Phone' : inputRef.current[3].value.trim(),
-                    'Image' : radioRef.current[i].value
+                    'id' : num,
+                    'name' : inputRef.current[0].value.trim(),
+                    'team' : inputRef.current[1].value.trim(),
+                    'job' : inputRef.current[2].value.trim(),
+                    'phone' : inputRef.current[3].value.trim(),
+                    'imgUrl' : radioRef.current[i].value
                 } 
                 break;
             } else if(!(radioRef.current[1].checked)){
                 return alert('이미지를 선택하지 않았습니다.');
             }
         }
-        
-        
-        console.log(profile);
+
+        setProfies([...profiles, profile]);
 
     }
 

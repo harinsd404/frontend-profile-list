@@ -10,7 +10,7 @@ export default function Header(){
             </header>
             <nav className='navBar'>
                 <Link to="/">Home</Link>
-                <Link to="">Card List</Link>
+                <Link to="/profile/profileList">Card List</Link>
                 <Link to="/profile/profileForm">Make Card</Link>
             </nav>
         </>
