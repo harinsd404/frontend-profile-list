@@ -7,14 +7,10 @@ export default function ProfileForm({ profiles, setProfiles }){
     const inputRef = useRef([]);
     const radioRef = useRef([]);
 
+    const nextId = Math.max(0, ...profiles.map(p=>p.id)) + 1;
+
     let profile = {};
     const addProfile = () => {
-        let num;
-        if(profiles)
-            num = profiles[profiles.length-1].id + 1;
-        else
-            num=1;
-
         for (let i=0;i<inputRef.current.length;i++){
             if (inputRef.current[i].value.trim() === "") {
                 alert('입력되지 않은 값이 있습니다.');
@@ -24,7 +20,7 @@ export default function ProfileForm({ profiles, setProfiles }){
         for(let i=0;i<radioRef.current.length;i++){
             if(radioRef.current[i].checked) {
                 profile = {
-                    id : num,
+                    id : nextId,
                     name : inputRef.current[0].value.trim(),
                     team : inputRef.current[1].value.trim(),
                     job : inputRef.current[2].value.trim(),

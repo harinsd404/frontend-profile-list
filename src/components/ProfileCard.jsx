@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import defaultImg from '../assets/PARADOX_default.png';
 import reverseImg from '../assets/PARADOX_reverse.png';
+import '../style/components.css';
 
 
 export default function ProfileCard({ data, onDelete }) {
@@ -21,8 +22,8 @@ export default function ProfileCard({ data, onDelete }) {
                         <p>email. {data.email}</p>
                     </div>
                     <div className="btnArea">
-                        <button onClick={()=>navigate('/profile/modify/'+data.id)}>수정</button>
-                        <button onClick={onDelete}>삭제</button>
+                        <button onClick={()=>navigate('/profile/modify/'+data.id)} className="correctionBtn">수정</button>
+                        <button onClick={onDelete} className="deleteBtn">삭제</button>
                     </div>
                 </div>
             </div>
