@@ -6,12 +6,13 @@ import '../style/components.css';
 
 export default function ProfileCard({ data, onDelete }) {
     const navigate = useNavigate();
+    console.log(data.imgUrl);
     
     return (
         <>
             <div className="card">
                 <div className="profileBox">
-                    <img src={data.imgUrl=='/assets/PARADOX_default.png'?defaultImg:reverseImg} alt="" />
+                    <img src={data.imgUrl=='src/assets/PARADOX_default.png'?defaultImg:reverseImg} alt="" />
                     <h3>{data.name}</h3>
                 </div>
                 <div className="profileInfo">
