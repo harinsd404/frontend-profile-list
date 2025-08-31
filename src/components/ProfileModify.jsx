@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import axios from 'axios';
 import '../style/components.css';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -26,9 +27,14 @@ export default function ProfileModify({ profiles, setProfiles }){
                     job : inputRef.current[2].value.trim(),
                     tel : inputRef.current[3].value.trim(),
                     email : inputRef.current[4].value.trim(),
-                    imgUrl : radioRef.current[i].value
-                } 
-                break;
+                    imgUrl : radioRef.current.find(r => r.checked).value
+                };
+                axios.put(`http://localhost:8080/api/paradox/${id}`, profile)
+                .then(res => {
+                    setProfiles(profiles.map((p)=> p.id == id ? res.data : p));
+                    navigate('/profile/profileList');
+                })
+                .catch(err => console.error(err));
             } else if(!(radioRef.current[1].checked)){
                 return alert('이미지를 선택하지 않았습니다.');
             }
